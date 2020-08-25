@@ -426,7 +426,7 @@ router.get('/cursos',async(req,res)=>{
     const cursos=await Cursos.aggregate([
         {
            $project: {
-            _id:1,areaempresa:1,area:1,codigosence:1,duracion:1,tipo:1,tituloLargo:1,descripcion:1,horas:1,portada:1,modalidad:1,puntuacion:1,visita:1,  
+            _id:1,areaempresa:1,area:1,codigosence:1,duracion:1,tipo:1,tituloLargo:1,descripcion:1,horas:1,portada:1,modalidad:1,puntuacion:1,visita:1,precio:1,  
               modulos: { $cond: { if: { $isArray: "$modulos" }, then: { $size: "$modulos" }, else: "NA"} }
            }
         }
